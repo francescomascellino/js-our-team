@@ -166,9 +166,55 @@ addUserForm.addEventListener("submit", function (e) {
 
     //INSERISCO IL MARKUP IN PAGINA
     cardContEl.insertAdjacentHTML("beforeend", cardMarkup);
+
+    //NON FUNZIONA POICHE' RICEVE UN URL IMMAGINE ERRATO DATO CHE NON VIENEREALMENTE UPLADATA
+    // reloadCards(team)
+
 });
 
 console.log("new team =", team);
 
+//SI POTREBBE INSERIRE UNA FUNZIONE PER AGGIUNGERE IL MEMBRO MA C'E' UN BUG NELLE IMMAGINI DATO CHE QUESTA NON VIENE REALMENTE UPLADATA
+function reloadCards(team) {
+    cardContEl.innerHTML = "";
 
+    for (let i = 0; i < team.length; i++) {
+        const member = team[i];
+        // console.log(member);
 
+        /* ORA CICLIAMO ALL'INTERNO DELL'OGGETTO member RECUPERATO CON UN LOOP FOR IN PER RECUPERARE LE PROPRIETA' ED ASSEGNARLE A DELLE VARIABILI */
+        for (const key in member) {
+
+            // console.log("Key:", key);
+
+            const value = member[key]
+            // console.log("Value:", value);
+
+            const prop = `${key}: ${value}`;
+            console.log("Property =", prop);
+
+        }
+
+        // /* MILESTONE 2 + BONUS
+
+        //AD OGNI LOOP DEL CICLO PRINCIPALE...
+
+        //GENERO UNA VARIABILE CON IL PERCORSO DELLE IMMAGINI
+        const avatarMarkup = `./assets/img/${member.pic}`;
+
+        // GENERO UNA VARIABILE CON ALL'INTERNO IL MARKUP        
+        const cardMarkup =
+            `<div class="col-md-4 col-sm-6 g-3">
+            <div class="card shadow">
+            <img src="${avatarMarkup}" class="card-img-top" alt="member avatar">
+            <div class="card-body">
+                <h5 class="card-title">${member.name}</h5>
+                <h6 class="card-subtitle mb-2 text-muted ">${member.role}</h6>
+            </div>
+            </div>
+            </div>`;
+
+        //INSERISCO IL MARKUP IN PAGINA
+        cardContEl.insertAdjacentHTML("beforeend", cardMarkup);
+    }
+};
