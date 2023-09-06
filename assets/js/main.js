@@ -141,6 +141,7 @@ for (let i = 0; i < team.length; i++) {
 Aggiungete un form in pagina per permettere all’utente di aggiungere nuovi membri del team: cliccando sul pulsante “add” viene creato un nuovo oggetto, il quale viene inserito nell’array iniziale e viene stampata una nuova card con tutte le informazioni inserite dall’utente. */
 
 addUserForm.addEventListener("submit", (e) => {
+
     e.preventDefault();
     let newMember = {
         name: `${inputName.value}`,
@@ -162,13 +163,10 @@ addUserForm.addEventListener("submit", (e) => {
                 <h6 class="card-subtitle mb-2 text-muted ">${newMember.role}</h6>
             </div>
             </div>
-            </div>`;
+        </div>`;
 
     //INSERISCO IL MARKUP IN PAGINA
     cardContEl.insertAdjacentHTML("beforeend", cardMarkup);
-
-    //NON FUNZIONA POICHE' RICEVE UN URL IMMAGINE ERRATO DATO CHE NON VIENEREALMENTE UPLADATA
-    // reloadCards(team)
 
 });
 
@@ -227,8 +225,6 @@ function addNewMember() {
         role: `Role`,
         pic: `pic`
     }
-
-    team.push(newMember);
 
     return newMember;
 
