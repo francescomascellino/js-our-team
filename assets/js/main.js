@@ -140,7 +140,7 @@ for (let i = 0; i < team.length; i++) {
 /* BONUS EXTRA 
 Aggiungete un form in pagina per permettere all’utente di aggiungere nuovi membri del team: cliccando sul pulsante “add” viene creato un nuovo oggetto, il quale viene inserito nell’array iniziale e viene stampata una nuova card con tutte le informazioni inserite dall’utente. */
 
-addUserForm.addEventListener("submit", function (e) {
+addUserForm.addEventListener("submit", (e) => {
     e.preventDefault();
     let newMember = {
         name: `${inputName.value}`,
@@ -218,3 +218,22 @@ function reloadCards(team) {
         cardContEl.insertAdjacentHTML("beforeend", cardMarkup);
     }
 };
+
+/* TEST RETURN FUNZIONE
+function addNewMember() {
+
+    let newMember = {
+        name: `Name`,
+        role: `Role`,
+        pic: `pic`
+    }
+
+    team.push(newMember);
+
+    return newMember;
+
+}
+
+const newM = addNewMember();
+console.log("Return di addNewMember =", newM);
+ */
