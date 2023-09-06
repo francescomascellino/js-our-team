@@ -10,10 +10,12 @@ BONUS 1:
 Trasformare la stringa foto in una immagine effettiva
 BONUS 2:
 Organizzare i singoli membri in card/schede
+
 Consigli del giorno:
 Ragioniamo come sempre a step. Prima la logica in italiano e poi traduciamo in codice.
 E ricordiamoci che console.log() è nostro amico!
 Buon divertimento e confermate lettura come al solito!
+
 Dati:
 Wayne Barnett
 Founder & CEO	
@@ -57,31 +59,31 @@ const team = [
     {
         name: "Angela Caroll",
         role: "Chief Editor",
-        pic: "angela- caroll - chief - editor.jpg"
+        pic: "angela-caroll-chief-editor.jpg"
     },
 
     {
         name: "Walter Gordo",
         role: "Office Manager",
-        pic: "walter - gordon - office - manager.jpg"
+        pic: "walter-gordon-office-manager.jpg"
     },
 
     {
         name: "Angela Lope",
         role: "Social Media Manager",
-        pic: "angela - lopez - social - media - manager.jpg",
+        pic: "angela-lopez-social-media-manager.jpg",
     },
 
     {
         name: "Scott Estrad",
         role: "Developer",
-        pic: "scott - estrada - developer.jpg"
+        pic: "scott-estrada-developer.jpg"
     },
 
     {
         name: "Barbara Ramos",
         role: "Graphic Designer",
-        pic: "barbara - ramos - graphic - designer.jpg"
+        pic: "barbara-ramos-graphic-designer.jpg"
     },
 
 ];
@@ -105,8 +107,12 @@ for (let i = 0; i < team.length; i++) {
         const prop = `${key}: ${value}`;
         console.log("Property =", prop);
 
-        // GENERO UNA VARIABILE CON ALL'INTERNO IL MARKUP
+        // /* MILESTONE 2 + BONUS
+
+        //GENERO UNA VARIABILE CON IL PERCORSO DELLE IMMAGINI
         const avatarMarkup = `./assets/img/${member.pic}`;
+
+        // GENERO UNA VARIABILE CON ALL'INTERNO IL MARKUP        
         const cardMarkup = `<div class="card col-3">
         <img src="${avatarMarkup}"
         class="card-img-top" alt="member avatar">
@@ -123,8 +129,7 @@ for (let i = 0; i < team.length; i++) {
 
 
 
-/* MILESTONE 2:
-Stampare le stesse informazioni su DOM sottoforma di stringhe */
+
 
 
 
