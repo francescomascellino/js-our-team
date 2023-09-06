@@ -118,11 +118,13 @@ for (let i = 0; i < team.length; i++) {
 
     // GENERO UNA VARIABILE CON ALL'INTERNO IL MARKUP        
     const cardMarkup =
-        `<div class="card col-4 p-0">
+        `<div class="col-4 g-3">
+        <div class="card shadow">
         <img src="${avatarMarkup}" class="card-img-top" alt="member avatar">
         <div class="card-body">
             <h5 class="card-title">${member.name}</h5>
             <h6 class="card-subtitle mb-2 text-muted ">${member.role}</h6>
+        </div>
         </div>
         </div>`;
 
