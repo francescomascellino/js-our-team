@@ -40,6 +40,10 @@ Graphic Designer
 barbara-ramos-graphic-designer.jpg 
 */
 
+// RECUPERO IL NODO DEL DOM IN CUI INSERIRE IL MARKUP DI BS
+const cardContEl = document.getElementById("cardContEl");
+console.log(cardContEl);
+
 /* MILESTONE 0:
 Creare l’array di oggetti con le informazioni fornite. */
 const team = [
@@ -101,7 +105,30 @@ for (let i = 0; i < team.length; i++) {
         const prop = `${key}: ${value}`;
         console.log("Property =", prop);
 
+        // GENERO UNA VARIABILE CON ALL'INTERNO IL MARKUP
+        const avatarMarkup = `./assets/img/${member.pic}`;
+        const cardMarkup = `<div class="card col-3">
+        <img src="${avatarMarkup}"
+        class="card-img-top" alt="member avatar">
+        <div class="card-body">
+            <h5 class="card-title">${member.name}</h5>
+            <h6 class="card-subtitle mb-2 text-muted ">${member.role}</h6>
+        </div>
+        </div>`;
+
+        cardContEl.insertAdjacentHTML("beforeend", cardMarkup);
+
     }
 }
+
+
+
+/* MILESTONE 2:
+Stampare le stesse informazioni su DOM sottoforma di stringhe */
+
+
+
+
+
 
 
