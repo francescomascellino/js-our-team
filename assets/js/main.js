@@ -82,3 +82,26 @@ const team = [
 
 ];
 
+/* MILESTONE 1:
+Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto */
+
+//NORMALE CICLO ALL'INTERNO DI UN ARRAY. OGNI INDICE IN CONSOLE E' UN OGGETTO (MEMBER DEL TEAM)
+for (let i = 0; i < team.length; i++) {
+    const member = team[i];
+    // console.log(member);
+
+    //ORA CICLIAMO ALL'INTERNO DELL'OGGETTO member RECUPERATO CON UN LOOP FOR IN
+    for (const key in member) {
+
+        // console.log("Key:", key);
+
+        const value = member[key]
+        // console.log("Value:", value);
+
+        const prop = `${key}: ${value}`;
+        console.log("Property =", prop);
+
+    }
+}
+
+
