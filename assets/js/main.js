@@ -150,8 +150,6 @@ addUserForm.addEventListener("submit", function (e) {
 
     team.push(newMember);
 
-    console.log(team);
-
     const avatarMarkup = newMember.pic;
 
     // GENERO UNA VARIABILE CON ALL'INTERNO IL MARKUP        
@@ -170,6 +168,7 @@ addUserForm.addEventListener("submit", function (e) {
     cardContEl.insertAdjacentHTML("beforeend", cardMarkup);
 });
 
+console.log("new team =", team);
 
 
 
