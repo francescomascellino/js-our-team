@@ -44,7 +44,11 @@ barbara-ramos-graphic-designer.jpg
 
 // RECUPERO IL NODO DEL DOM IN CUI INSERIRE IL MARKUP DI BS
 const cardContEl = document.getElementById("cardContEl");
-console.log(cardContEl);
+const addUserForm = document.getElementById("addUserForm");
+const inputName = document.getElementById("inputName");
+const inputRole = document.getElementById("inputRole");
+const inputImg = document.getElementById("inputImg");
+
 
 /* MILESTONE 0:
 Creare l’array di oggetti con le informazioni fornite. */
@@ -118,7 +122,7 @@ for (let i = 0; i < team.length; i++) {
 
     // GENERO UNA VARIABILE CON ALL'INTERNO IL MARKUP        
     const cardMarkup =
-        `<div class="col-4 g-3">
+        `<div class="col-md-4 col-sm-6 g-3">
         <div class="card shadow">
         <img src="${avatarMarkup}" class="card-img-top" alt="member avatar">
         <div class="card-body">
@@ -130,14 +134,41 @@ for (let i = 0; i < team.length; i++) {
 
     //INSERISCO IL MARKUP IN PAGINA
     cardContEl.insertAdjacentHTML("beforeend", cardMarkup);
+
 }
 
+/* BONUS EXTRA 
+Aggiungete un form in pagina per permettere all’utente di aggiungere nuovi membri del team: cliccando sul pulsante “add” viene creato un nuovo oggetto, il quale viene inserito nell’array iniziale e viene stampata una nuova card con tutte le informazioni inserite dall’utente. */
 
+addUserForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    let newMember = {
+        name: `${inputName.value}`,
+        role: `${inputRole.value}`,
+        pic: `${inputImg.value}`
+    }
 
+    team.push(newMember);
 
+    console.log(team);
 
+    const avatarMarkup = newMember.pic;
 
+    // GENERO UNA VARIABILE CON ALL'INTERNO IL MARKUP        
+    const cardMarkup =
+        `<div class="col-md-4 col-sm-6 g-3">
+            <div class="card shadow">
+            <img src="${avatarMarkup}" class="card-img-top" alt="member avatar">
+            <div class="card-body">
+                <h5 class="card-title">${newMember.name}</h5>
+                <h6 class="card-subtitle mb-2 text-muted ">${newMember.role}</h6>
+            </div>
+            </div>
+            </div>`;
 
+    //INSERISCO IL MARKUP IN PAGINA
+    cardContEl.insertAdjacentHTML("beforeend", cardMarkup);
+});
 
 
 
