@@ -96,7 +96,7 @@ for (let i = 0; i < team.length; i++) {
     const member = team[i];
     // console.log(member);
 
-    //ORA CICLIAMO ALL'INTERNO DELL'OGGETTO member RECUPERATO CON UN LOOP FOR IN
+    /* ORA CICLIAMO ALL'INTERNO DELL'OGGETTO member RECUPERATO CON UN LOOP FOR IN PER RECUPERARE LE PROPRIETA' ED ASSEGNARLE A DELLE VARIABILI */
     for (const key in member) {
 
         // console.log("Key:", key);
@@ -107,24 +107,27 @@ for (let i = 0; i < team.length; i++) {
         const prop = `${key}: ${value}`;
         console.log("Property =", prop);
 
-        // /* MILESTONE 2 + BONUS
+    }
 
-        //GENERO UNA VARIABILE CON IL PERCORSO DELLE IMMAGINI
-        const avatarMarkup = `./assets/img/${member.pic}`;
+    // /* MILESTONE 2 + BONUS
 
-        // GENERO UNA VARIABILE CON ALL'INTERNO IL MARKUP        
-        const cardMarkup = `<div class="card col-3">
-        <img src="${avatarMarkup}"
-        class="card-img-top" alt="member avatar">
+    //AD OGNI LOOP DEL CICLO PRINCIPALE...
+
+    //GENERO UNA VARIABILE CON IL PERCORSO DELLE IMMAGINI
+    const avatarMarkup = `./assets/img/${member.pic}`;
+
+    // GENERO UNA VARIABILE CON ALL'INTERNO IL MARKUP        
+    const cardMarkup =
+        `<div class="card col-4 p-0">
+        <img src="${avatarMarkup}" class="card-img-top" alt="member avatar">
         <div class="card-body">
             <h5 class="card-title">${member.name}</h5>
             <h6 class="card-subtitle mb-2 text-muted ">${member.role}</h6>
         </div>
         </div>`;
 
-        cardContEl.insertAdjacentHTML("beforeend", cardMarkup);
-
-    }
+    //INSERISCO IL MARKUP IN PAGINA
+    cardContEl.insertAdjacentHTML("beforeend", cardMarkup);
 }
 
 
